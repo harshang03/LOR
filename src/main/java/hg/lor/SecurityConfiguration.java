@@ -9,8 +9,9 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfiguration {
 	 @Bean
 	 public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-		  http.authorizeRequests()
-					 .anyRequest().authenticated()
+		  http.authorizeHttpRequests()
+					 .anyRequest()
+					 .authenticated()
 					 .and()
 					 .formLogin()
 					 .loginPage("/login")
